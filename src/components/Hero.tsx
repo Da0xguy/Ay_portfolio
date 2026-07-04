@@ -50,7 +50,7 @@ export default function Hero() {
           >
             I am <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-cyan-500 dark:from-violet-400 dark:to-cyan-400 font-extrabold tracking-wide decoration-violet-500/30 underline underline-offset-8">{PERSONAL_INFO.nickname}</span>,
             <br />
-            shaping decentralized interfaces.
+            Frontend Developer.
           </motion.h1>
 
           {/* Location Badge */}
