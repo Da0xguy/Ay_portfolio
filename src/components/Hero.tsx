@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Mail, Phone, Github, MapPin, Copy, Check, ArrowUpRight, Sparkles, Linkedin, Twitter, Instagram, MessageCircle } from 'lucide-react';
+import { Mail, Phone, Github, MapPin, Copy, Check, ArrowUpRight, Sparkles, Linkedin, Twitter, Instagram, MessageCircle, FileDown } from 'lucide-react';
 import { useState } from 'react';
 import { PERSONAL_INFO } from '../data';
 
@@ -20,27 +20,22 @@ export default function Hero() {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center pt-24 pb-16 overflow-hidden">
-      {/* Dynamic ambient glass glow backdrops */}
-      <div className="absolute inset-0 pointer-events-none z-0">
-        <div className="glass-glow w-[350px] h-[350px] top-1/4 left-1/10 animate-soft-pulse bg-violet-500/5 dark:bg-violet-500/10" />
-        <div className="glass-glow w-[450px] h-[450px] bottom-1/5 right-1/10 bg-cyan-500/5 dark:bg-cyan-500/5 animate-soft-pulse" style={{ animationDelay: '4s' }} />
+    <section id="home" className="relative min-h-screen flex items-center justify-center pt-28 pb-16 overflow-hidden">
+      {/* Premium ambient backdrop layered with tech grid (Sui.io Style) */}
+      <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+        {/* Grids with radial masking */}
+        <div className="absolute inset-0 tech-grid opacity-75 dark:opacity-90" />
+        <div className="absolute inset-0 tech-grid-dense opacity-45 dark:opacity-30" />
+        
+        {/* Liquid floating neon gradient backdrops */}
+        <div className="absolute top-[10%] left-[-10%] w-[500px] h-[500px] rounded-full bg-gradient-to-tr from-yellow-600/10 to-amber-600/5 blur-[120px] animate-float-slow" />
+        <div className="absolute bottom-[10%] right-[-10%] w-[600px] h-[600px] rounded-full bg-gradient-to-br from-yellow-500/10 to-amber-500/2 blur-[140px] animate-float-reverse" />
+        <div className="absolute top-[40%] left-[30%] w-[350px] h-[350px] rounded-full bg-yellow-500/5 dark:bg-amber-500/5 blur-[110px] animate-soft-pulse" />
       </div>
 
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10 w-full">
         {/* Left Side: Copywriting */}
         <div className="lg:col-span-7 flex flex-col items-start text-left">
-          {/* Tag */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
-            className="px-3 py-1.5 rounded-xl border text-xs font-mono font-semibold flex items-center gap-1.5 mb-6 bg-violet-500/5 dark:bg-violet-500/10 border-violet-500/20 dark:border-violet-500/30 text-violet-600 dark:text-violet-400"
-          >
-            <Sparkles className="w-3.5 h-3.5" />
-            Frontend & Web3 Architect
-          </motion.div>
-
           {/* Heading */}
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -48,7 +43,7 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-4xl sm:text-6xl font-bold font-display tracking-tight text-brand-text leading-tight mb-4"
           >
-            I am <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-cyan-500 dark:from-violet-400 dark:to-cyan-400 font-extrabold tracking-wide decoration-violet-500/30 underline underline-offset-8">{PERSONAL_INFO.nickname}</span>,
+            I am <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-500 font-extrabold tracking-wide decoration-yellow-500/30 underline underline-offset-8">{PERSONAL_INFO.nickname}</span>,
             <br />
             Frontend Developer.
           </motion.h1>
@@ -89,7 +84,7 @@ export default function Hero() {
             <button
               id="hero-play-btn"
               onClick={() => handleScrollTo('projects')}
-              className="px-6 py-3.5 rounded-2xl text-sm font-semibold transition-all flex items-center gap-2 cursor-pointer hover:scale-[1.02] active:scale-[0.98] shadow-[0_4px_20px_rgba(124,58,237,0.15)] dark:shadow-[0_4px_20px_rgba(124,58,237,0.35)] bg-gradient-to-r from-violet-600 to-cyan-500 hover:from-violet-500 hover:to-cyan-400 text-white border-0"
+              className="px-6 py-3.5 rounded-2xl text-sm font-bold transition-all flex items-center gap-2 cursor-pointer hover:scale-[1.02] active:scale-[0.98] shadow-[0_4px_20px_rgba(234,179,8,0.12)] dark:shadow-[0_4px_25px_rgba(234,179,8,0.25)] bg-gradient-to-r from-yellow-500 via-amber-500 to-yellow-600 hover:from-yellow-400 hover:to-amber-400 text-zinc-950 border-0"
             >
               Explore Projects
               <ArrowUpRight className="w-4 h-4" />
@@ -98,11 +93,23 @@ export default function Hero() {
             <button
               id="hero-cli-btn"
               onClick={() => handleScrollTo('experience')}
-              className="px-6 py-3.5 rounded-2xl text-sm font-medium bg-brand-bg/50 dark:bg-black/80 border border-brand-border hover:border-brand-accent/20 text-brand-muted hover:text-brand-text transition-all flex items-center gap-2 cursor-pointer"
+              className="px-6 py-3.5 rounded-2xl text-sm font-medium bg-brand-bg/50 dark:bg-black/80 border border-brand-border hover:border-brand-accent/40 text-brand-muted hover:text-brand-text transition-all flex items-center gap-2 cursor-pointer"
             >
               View Journey
               <ArrowUpRight className="w-4 h-4" />
             </button>
+
+            <a
+              id="hero-resume-btn"
+              href={PERSONAL_INFO.resumeUrl}
+              download="Oketona_Samuel_Ayobami_Resume.pdf"
+              target="_blank"
+              rel="noreferrer"
+              className="px-6 py-3.5 rounded-2xl text-sm font-medium bg-white/5 dark:bg-zinc-900/30 backdrop-blur-md border border-brand-border/60 hover:border-yellow-500/50 text-brand-text hover:text-yellow-500 hover:shadow-[0_0_20px_rgba(234,179,8,0.15)] transition-all duration-300 flex items-center gap-2 cursor-pointer hover:scale-[1.02] active:scale-[0.98] group"
+            >
+              Download Resume
+              <FileDown className="w-4 h-4 text-brand-muted group-hover:text-yellow-500 transition-colors" />
+            </a>
           </motion.div>
 
           {/* Socials & Quick Contact */}
@@ -120,7 +127,7 @@ export default function Hero() {
                 href={PERSONAL_INFO.github}
                 target="_blank"
                 rel="noreferrer"
-                className="p-2.5 rounded-xl bg-brand-bg/50 dark:bg-black/40 border border-brand-border hover:border-violet-500/40 text-brand-muted hover:text-brand-text transition-all hover:scale-115 cursor-pointer flex items-center justify-center hover:shadow-md hover:shadow-violet-500/5"
+                className="p-2.5 rounded-xl bg-brand-bg/50 dark:bg-black/40 border border-brand-border hover:border-yellow-500/40 text-brand-muted hover:text-brand-text transition-all hover:scale-115 cursor-pointer flex items-center justify-center hover:shadow-md hover:shadow-yellow-500/5"
                 title="GitHub Profile"
               >
                 <Github className="w-4 h-4" />
@@ -131,7 +138,7 @@ export default function Hero() {
                 href={PERSONAL_INFO.linkedin}
                 target="_blank"
                 rel="noreferrer"
-                className="p-2.5 rounded-xl bg-brand-bg/50 dark:bg-black/40 border border-brand-border hover:border-violet-500/40 text-brand-muted hover:text-brand-text transition-all hover:scale-115 cursor-pointer flex items-center justify-center hover:shadow-md hover:shadow-violet-500/5"
+                className="p-2.5 rounded-xl bg-brand-bg/50 dark:bg-black/40 border border-brand-border hover:border-yellow-500/40 text-brand-muted hover:text-brand-text transition-all hover:scale-115 cursor-pointer flex items-center justify-center hover:shadow-md hover:shadow-yellow-500/5"
                 title="LinkedIn Profile"
               >
                 <Linkedin className="w-4 h-4" />
@@ -142,7 +149,7 @@ export default function Hero() {
                 href={PERSONAL_INFO.twitter}
                 target="_blank"
                 rel="noreferrer"
-                className="p-2.5 rounded-xl bg-brand-bg/50 dark:bg-black/40 border border-brand-border hover:border-violet-500/40 text-brand-muted hover:text-brand-text transition-all hover:scale-115 cursor-pointer flex items-center justify-center hover:shadow-md hover:shadow-violet-500/5"
+                className="p-2.5 rounded-xl bg-brand-bg/50 dark:bg-black/40 border border-brand-border hover:border-yellow-500/40 text-brand-muted hover:text-brand-text transition-all hover:scale-115 cursor-pointer flex items-center justify-center hover:shadow-md hover:shadow-yellow-500/5"
                 title="Twitter / X Profile"
               >
                 <Twitter className="w-4 h-4" />
@@ -153,7 +160,7 @@ export default function Hero() {
                 href={PERSONAL_INFO.instagram}
                 target="_blank"
                 rel="noreferrer"
-                className="p-2.5 rounded-xl bg-brand-bg/50 dark:bg-black/40 border border-brand-border hover:border-violet-500/40 text-brand-muted hover:text-brand-text transition-all hover:scale-115 cursor-pointer flex items-center justify-center hover:shadow-md hover:shadow-violet-500/5"
+                className="p-2.5 rounded-xl bg-brand-bg/50 dark:bg-black/40 border border-brand-border hover:border-yellow-500/40 text-brand-muted hover:text-brand-text transition-all hover:scale-115 cursor-pointer flex items-center justify-center hover:shadow-md hover:shadow-yellow-500/5"
                 title="Instagram Profile"
               >
                 <Instagram className="w-4 h-4" />
@@ -164,7 +171,7 @@ export default function Hero() {
                 href={PERSONAL_INFO.whatsapp}
                 target="_blank"
                 rel="noreferrer"
-                className="p-2.5 rounded-xl bg-brand-bg/50 dark:bg-black/40 border border-brand-border hover:border-violet-500/40 text-brand-muted hover:text-brand-text transition-all hover:scale-115 cursor-pointer flex items-center justify-center hover:shadow-md hover:shadow-violet-500/5"
+                className="p-2.5 rounded-xl bg-brand-bg/50 dark:bg-black/40 border border-brand-border hover:border-yellow-500/40 text-brand-muted hover:text-brand-text transition-all hover:scale-115 cursor-pointer flex items-center justify-center hover:shadow-md hover:shadow-yellow-500/5"
                 title="WhatsApp Chat"
               >
                 <MessageCircle className="w-4 h-4" />
@@ -175,7 +182,7 @@ export default function Hero() {
               <a
                 id="hero-email-link"
                 href={`mailto:${PERSONAL_INFO.email}`}
-                className="flex items-center gap-2 px-3 py-2 rounded-xl bg-brand-bg/50 dark:bg-black/40 border border-brand-border hover:border-violet-500/40 hover:text-brand-text text-brand-muted text-xs font-mono transition-all cursor-pointer max-w-full"
+                className="flex items-center gap-2 px-3 py-2 rounded-xl bg-brand-bg/50 dark:bg-black/40 border border-brand-border hover:border-yellow-500/40 hover:text-brand-text text-brand-muted text-xs font-mono transition-all cursor-pointer max-w-full"
                 title="Send direct email"
               >
                 <Mail className="w-3.5 h-3.5 flex-shrink-0" />
@@ -185,7 +192,7 @@ export default function Hero() {
               <button
                 id="hero-copy-email-btn"
                 onClick={handleCopyEmail}
-                className="p-2 rounded-xl bg-brand-bg/50 dark:bg-black/40 border border-brand-border hover:border-violet-500/40 hover:text-brand-text text-brand-muted transition-all cursor-pointer flex items-center justify-center flex-shrink-0"
+                className="p-2 rounded-xl bg-brand-bg/50 dark:bg-black/40 border border-brand-border hover:border-yellow-500/40 hover:text-brand-text text-brand-muted transition-all cursor-pointer flex items-center justify-center flex-shrink-0"
                 title="Copy email to clipboard"
               >
                 {copied ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
@@ -194,7 +201,7 @@ export default function Hero() {
               <a
                 id="hero-call-link"
                 href={`tel:${PERSONAL_INFO.phone}`}
-                className="flex items-center gap-2 px-3 py-2 rounded-xl bg-brand-bg/50 dark:bg-black/40 border border-brand-border hover:border-violet-500/40 hover:text-brand-text text-brand-muted text-xs font-mono transition-all max-w-full"
+                className="flex items-center gap-2 px-3 py-2 rounded-xl bg-brand-bg/50 dark:bg-black/40 border border-brand-border hover:border-yellow-500/40 hover:text-brand-text text-brand-muted text-xs font-mono transition-all max-w-full"
                 title="Call directly"
               >
                 <Phone className="w-3.5 h-3.5 flex-shrink-0" />
@@ -221,7 +228,7 @@ export default function Hero() {
             />
 
             {/* Glowing Center core */}
-            <div className="absolute inset-[30%] rounded-full opacity-30 dark:opacity-20 filter blur-2xl animate-soft-pulse bg-gradient-to-tr from-violet-600 to-cyan-400" />
+            <div className="absolute inset-[30%] rounded-full opacity-30 dark:opacity-20 filter blur-2xl animate-soft-pulse bg-gradient-to-tr from-yellow-500 to-amber-500" />
 
             {/* Glass layer 1: Background Layer */}
             <motion.div

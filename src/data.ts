@@ -14,6 +14,7 @@ export const PERSONAL_INFO = {
   instagram: 'https://www.instagram.com/ay_obami01',
   facebook: 'https://www.facebook.com/ayo.bami.802834',
   portfolioUrl: 'https://ay-portfolio-lime.vercel.app',
+  resumeUrl: '#', // Replace with a downloadable PDF path or external link when ready
   summary: 'Frontend-focused software developer and product-minded technologist with hands-on experience building modern web and Web3 applications using React, TypeScript, and blockchain tooling. Strong understanding of product strategy and user experience. Comfortable working across engineering and business teams to ship scalable, user-centric solutions.'
 };
 

@@ -24,7 +24,7 @@ export default function Projects() {
     <section id="projects" className="py-24 relative overflow-hidden">
       {/* Background radial soft light */}
       <div className="absolute inset-0 pointer-events-none z-0">
-        <div className="glass-glow w-[500px] h-[500px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-violet-500/5 dark:bg-violet-500/10" />
+        <div className="glass-glow w-[500px] h-[500px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-yellow-500/5 dark:bg-amber-500/10" />
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -37,7 +37,7 @@ export default function Projects() {
           className="flex flex-col items-center text-center mb-14"
         >
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-brand-text font-display">
-            Featured <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-cyan-500 dark:from-violet-400 dark:to-cyan-400 font-extrabold">Works</span>
+            Featured <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-500 font-extrabold">Works</span>
           </h2>
           <p className="text-brand-muted text-sm sm:text-base font-sans mt-3 max-w-xl">
             A selective showcase of live payment architectures, decentralized dApps on the Sui Blockchain, and highly visual learning hubs.
@@ -61,7 +61,7 @@ export default function Projects() {
                 className={`
                   px-5 py-2.5 rounded-full text-xs font-mono font-medium border transition-all cursor-pointer relative flex-shrink-0
                   ${activeTab === tab.id
-                    ? 'border-violet-500/30 text-brand-text font-semibold'
+                    ? 'border-yellow-500/30 text-brand-text font-semibold'
                     : 'border-brand-border/40 text-brand-muted hover:text-brand-text bg-brand-bg/40'}
                 `}
               >
@@ -69,7 +69,7 @@ export default function Projects() {
                 {activeTab === tab.id && (
                   <motion.div
                     layoutId="activeProjectTabBg"
-                    className="absolute inset-0 rounded-full bg-violet-600/10 dark:bg-violet-500/15 -z-10 border border-violet-500/20 dark:border-violet-500/30"
+                    className="absolute inset-0 rounded-full bg-yellow-600/10 dark:bg-yellow-500/15 -z-10 border border-yellow-500/20 dark:border-yellow-500/30"
                     transition={{ type: 'spring', stiffness: 350, damping: 28 }}
                     style={{
                       boxShadow: '0 0 12px 0px var(--theme-glow)'
@@ -99,10 +99,11 @@ export default function Projects() {
             >
               <GlassCard
                 onClick={() => setSelectedProject(project)}
-                className="p-6 text-left flex flex-col justify-between h-full group hover:scale-[1.03] hover:-translate-y-1 transition-all duration-300 cursor-pointer border-brand-border/40 hover:border-violet-500/30 hover:shadow-[0_0_30px_var(--theme-glow)]"
+                tilt={true}
+                className="p-6 text-left flex flex-col justify-between h-full group cursor-pointer border-brand-border/40 hover:border-yellow-500/30 transition-colors duration-300"
               >
                 {/* Visual Accent Glow on card top */}
-                <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-violet-600 to-cyan-500 opacity-20 group-hover:opacity-100 transition-opacity" />
+                <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-yellow-500 via-amber-500 to-yellow-600 opacity-20 group-hover:opacity-100 transition-opacity" />
 
                 <div>
                   {/* Category & Badge */}
@@ -153,7 +154,7 @@ export default function Projects() {
                   </div>
 
                   {/* Enhanced action button block */}
-                  <div className="w-full py-2.5 px-4 rounded-xl text-xs font-mono font-semibold text-brand-muted border border-brand-border bg-brand-bg/30 flex items-center justify-between transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-violet-600 group-hover:to-cyan-500 group-hover:text-white group-hover:shadow-[0_4px_20px_rgba(124,58,237,0.3)] group-hover:border-transparent">
+                  <div className="w-full py-2.5 px-4 rounded-xl text-xs font-mono font-bold text-brand-muted border border-brand-border bg-brand-bg/30 flex items-center justify-between transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-yellow-500 group-hover:to-amber-500 group-hover:text-zinc-950 group-hover:shadow-[0_4px_20px_rgba(234,179,8,0.25)] group-hover:border-transparent">
                     <span>View Project Spec</span>
                     <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
                   </div>
@@ -189,7 +190,7 @@ export default function Projects() {
                 className="w-full max-w-2xl rounded-2xl border shadow-2xl overflow-hidden glass-panel flex flex-col justify-between my-8 text-left p-0 border-brand-border"
               >
                 {/* Header glow */}
-                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-violet-600 to-cyan-500" />
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-yellow-500 via-amber-500 to-yellow-600" />
 
                 {/* Core Padding */}
                 <div className="p-6 sm:p-8 space-y-6 relative max-h-[80vh] overflow-y-auto">

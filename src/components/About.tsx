@@ -5,17 +5,17 @@ import GlassCard from './GlassCard';
 export default function About() {
   const philosophies = [
     {
-      icon: <Terminal className="w-5 h-5 text-white" />,
+      icon: <Terminal className="w-5 h-5 text-brand-accent" />,
       title: "Clean Execution",
       description: "Writing scalable, statically typed TypeScript coupled with strict component design patterns for robust layouts."
     },
     {
-      icon: <Shield className="w-5 h-5 text-white" />,
+      icon: <Shield className="w-5 h-5 text-brand-accent" />,
       title: "Web3 Authenticity",
       description: "Direct on-chain state integration, signature handling, and fluid wallet interaction pipelines built native to the browser."
     },
     {
-      icon: <Target className="w-5 h-5 text-white" />,
+      icon: <Target className="w-5 h-5 text-brand-accent" />,
       title: "Product-Minded",
       description: "Translating ambiguous product strategy into pixel-perfect frontend experiences that deliver high user engagement."
     }
@@ -25,7 +25,7 @@ export default function About() {
     <section id="about" className="py-24 relative overflow-hidden">
       {/* Background soft glow */}
       <div className="absolute inset-0 pointer-events-none z-0">
-        <div className="glass-glow w-[350px] h-[350px] top-1/4 left-1/10 bg-white/5" />
+        <div className="glass-glow w-[350px] h-[350px] top-1/4 left-1/10 bg-yellow-500/5" />
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -38,7 +38,7 @@ export default function About() {
           className="flex flex-col items-center text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-brand-text font-display">
-            About <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-cyan-500 dark:from-violet-400 dark:to-cyan-400 font-extrabold">Me</span>
+            About <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-500 font-extrabold">Me</span>
           </h2>
           <p className="text-brand-muted text-sm sm:text-base mt-3 max-w-xl">
             A deeper look into my design mindset, software engineering principles, and focus.
@@ -49,7 +49,7 @@ export default function About() {
           {/* Main Biography Column */}
           <div className="lg:col-span-7 flex flex-col justify-between">
             <GlassCard
-              hoverEffect={false}
+              hoverEffect={true}
               className="p-8 h-full flex flex-col justify-between text-left"
             >
               <div className="space-y-6">

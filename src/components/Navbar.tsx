@@ -74,7 +74,7 @@ export default function Navbar({
           }}
           className="flex items-center gap-2 group cursor-pointer"
         >
-          <div className="relative flex items-center justify-center w-9 h-9 rounded-xl bg-gradient-to-tr from-violet-600 via-purple-600 to-cyan-500 dark:from-black dark:to-slate-900 border border-brand-border group-hover:border-brand-accent/40 transition-all">
+          <div className="relative flex items-center justify-center w-9 h-9 rounded-xl bg-gradient-to-tr from-yellow-500 via-amber-500 to-yellow-600 dark:from-black dark:to-slate-900 border border-brand-border group-hover:border-brand-accent/40 transition-all">
             <Cpu className="w-4 h-5 transition-transform group-hover:scale-110 text-white" />
             <div className="absolute inset-0 rounded-xl bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity" />
           </div>
@@ -171,9 +171,9 @@ export default function Navbar({
                     setActiveSection(item.id);
                     setIsMobileMenuOpen(false);
                   }}
-                  className={`text-sm font-medium py-1.5 tracking-wide block transition-colors ${
+                    className={`text-sm font-medium py-1.5 tracking-wide block transition-colors ${
                     activeSection === item.id
-                      ? 'text-brand-text font-bold pl-2 border-l-2 border-indigo-500'
+                      ? 'text-brand-text font-bold pl-2 border-l-2 border-yellow-500'
                       : 'text-brand-muted hover:text-brand-text pl-0 hover:pl-2'
                   }`}
                 >

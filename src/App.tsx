@@ -61,8 +61,8 @@ export default function App() {
     <div className="min-h-screen bg-brand-bg text-brand-text font-sans relative transition-colors duration-300">
       {/* Absolute Dynamic Glowing Nodes - Pure Lively Gradient Glow */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-        <div className="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] rounded-full blur-[130px] opacity-[0.08] dark:opacity-[0.12] bg-gradient-to-tr from-violet-500 to-cyan-500" />
-        <div className="absolute bottom-[-10%] right-[-10%] w-[45vw] h-[45vw] rounded-full blur-[140px] opacity-[0.04] dark:opacity-[0.06] bg-gradient-to-br from-fuchsia-500 to-indigo-500" />
+        <div className="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] rounded-full blur-[130px] opacity-[0.06] dark:opacity-[0.10] bg-gradient-to-tr from-yellow-500 to-amber-500" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[45vw] h-[45vw] rounded-full blur-[140px] opacity-[0.03] dark:opacity-[0.05] bg-gradient-to-br from-yellow-600 to-amber-600" />
       </div>
 
       {/* Primary Sticky Header */}
@@ -75,6 +75,15 @@ export default function App() {
 
       {/* Main Sections */}
       <main className="relative z-10">
+        {/* Continuous technical vertical track lines down the margin on desktop */}
+        <div className="absolute left-[6%] top-[800px] bottom-[200px] w-[1px] bg-gradient-to-b from-transparent via-yellow-500/10 to-transparent hidden xl:block pointer-events-none" />
+        <div className="absolute right-[6%] top-[1400px] bottom-[400px] w-[1px] bg-gradient-to-b from-transparent via-amber-500/10 to-transparent hidden xl:block pointer-events-none" />
+
+        {/* Ambient scrolling fluid glow overlays (Sui.io high-contrast style) */}
+        <div className="absolute top-[1200px] left-[-15%] w-[500px] h-[500px] rounded-full bg-yellow-600/5 dark:bg-yellow-500/5 blur-[130px] pointer-events-none" />
+        <div className="absolute top-[2400px] right-[-15%] w-[650px] h-[650px] rounded-full bg-amber-600/5 dark:bg-amber-500/5 blur-[150px] pointer-events-none" />
+        <div className="absolute top-[3800px] left-[-10%] w-[500px] h-[500px] rounded-full bg-yellow-500/5 dark:bg-amber-500/5 blur-[120px] pointer-events-none" />
+
         <Hero />
 
         <motion.div

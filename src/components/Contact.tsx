@@ -75,8 +75,8 @@ export default function Contact() {
     <section id="contact" className="py-24 relative overflow-hidden">
       {/* Background Soft Glows */}
       <div className="absolute inset-0 pointer-events-none z-0">
-        <div className="glass-glow w-[400px] h-[400px] top-1/4 right-1/10 bg-violet-500/5 dark:bg-violet-500/10 animate-soft-pulse" />
-        <div className="glass-glow w-[350px] h-[350px] bottom-1/4 left-1/10 bg-cyan-500/5 dark:bg-cyan-500/5 animate-soft-pulse" style={{ animationDelay: '3s' }} />
+        <div className="glass-glow w-[400px] h-[400px] top-1/4 right-1/10 bg-yellow-500/5 dark:bg-yellow-500/10 animate-soft-pulse" />
+        <div className="glass-glow w-[350px] h-[350px] bottom-1/4 left-1/10 bg-amber-500/5 dark:bg-amber-500/5 animate-soft-pulse" style={{ animationDelay: '3s' }} />
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
@@ -89,7 +89,7 @@ export default function Contact() {
           className="flex flex-col items-center text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-brand-text font-display">
-            Let's <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-cyan-500 dark:from-violet-400 dark:to-cyan-400 font-extrabold">Collaborate</span>
+            Let's <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-500 font-extrabold">Collaborate</span>
           </h2>
           <p className="text-brand-muted text-sm sm:text-base font-sans mt-3 max-w-xl">
             Whether you want to build a decentralized dApp, consult on frontend performance, or explore open opportunities, let's start the conversation.
@@ -115,9 +115,9 @@ export default function Contact() {
 
                 <div className="space-y-4">
                   {/* Email Channel */}
-                  <div className="group rounded-2xl border border-brand-border/40 hover:border-violet-500/20 bg-brand-bg/20 hover:bg-brand-bg/40 p-3.5 flex items-center justify-between transition-all duration-300">
+                  <div className="group rounded-2xl border border-brand-border/40 hover:border-yellow-500/20 bg-brand-bg/20 hover:bg-brand-bg/40 p-3.5 flex items-center justify-between transition-all duration-300">
                     <div className="flex items-center gap-3.5 min-w-0">
-                      <div className="w-9 h-9 rounded-xl bg-violet-500/5 dark:bg-violet-500/10 flex items-center justify-center text-violet-600 dark:text-violet-400 flex-shrink-0">
+                      <div className="w-9 h-9 rounded-xl bg-yellow-500/5 dark:bg-yellow-500/10 flex items-center justify-center text-yellow-600 dark:text-yellow-400 flex-shrink-0">
                         <Mail className="w-4 h-4" />
                       </div>
                       <div className="min-w-0">
@@ -227,10 +227,10 @@ export default function Contact() {
             </GlassCard>
 
             {/* Micro-Scheduler/Consultation Call Pitch Card */}
-            <GlassCard hoverEffect={true} className="p-6 text-left border-dashed border-brand-border/80 hover:border-violet-500/30">
+            <GlassCard hoverEffect={true} className="p-6 text-left border-dashed border-brand-border/80 hover:border-yellow-500/30">
               <div className="flex items-start gap-4">
-                <div className="p-3 rounded-xl bg-violet-600/10 text-violet-500 border border-violet-500/20 mt-0.5">
-                  <Clock className="w-5 h-5 text-violet-600 dark:text-violet-400" />
+                <div className="p-3 rounded-xl bg-yellow-600/10 text-yellow-500 border border-yellow-500/20 mt-0.5">
+                  <Clock className="w-5 h-5 text-yellow-600 dark:text-yellow-400" />
                 </div>
                 <div className="space-y-1">
                   <h4 className="text-sm font-semibold text-brand-text tracking-wide">Looking for a consultation call?</h4>
@@ -258,7 +258,7 @@ export default function Contact() {
                   href={PERSONAL_INFO.linkedin}
                   target="_blank"
                   rel="noreferrer"
-                  className="p-2 rounded-xl bg-brand-bg/50 dark:bg-black/40 border border-brand-border hover:border-violet-500/40 text-brand-muted hover:text-brand-text transition-all hover:scale-110 flex items-center justify-center cursor-pointer"
+                  className="p-2 rounded-xl bg-brand-bg/50 dark:bg-black/40 border border-brand-border hover:border-yellow-500/40 text-brand-muted hover:text-brand-text transition-all hover:scale-110 flex items-center justify-center cursor-pointer"
                   title="LinkedIn"
                 >
                   <Linkedin className="w-4 h-4" />
@@ -267,7 +267,7 @@ export default function Contact() {
                   href={PERSONAL_INFO.github}
                   target="_blank"
                   rel="noreferrer"
-                  className="p-2 rounded-xl bg-brand-bg/50 dark:bg-black/40 border border-brand-border hover:border-violet-500/40 text-brand-muted hover:text-brand-text transition-all hover:scale-110 flex items-center justify-center cursor-pointer"
+                  className="p-2 rounded-xl bg-brand-bg/50 dark:bg-black/40 border border-brand-border hover:border-yellow-500/40 text-brand-muted hover:text-brand-text transition-all hover:scale-110 flex items-center justify-center cursor-pointer"
                   title="GitHub"
                 >
                   <Github className="w-4 h-4" />
@@ -276,7 +276,7 @@ export default function Contact() {
                   href={PERSONAL_INFO.twitter}
                   target="_blank"
                   rel="noreferrer"
-                  className="p-2 rounded-xl bg-brand-bg/50 dark:bg-black/40 border border-brand-border hover:border-violet-500/40 text-brand-muted hover:text-brand-text transition-all hover:scale-110 flex items-center justify-center cursor-pointer"
+                  className="p-2 rounded-xl bg-brand-bg/50 dark:bg-black/40 border border-brand-border hover:border-yellow-500/40 text-brand-muted hover:text-brand-text transition-all hover:scale-110 flex items-center justify-center cursor-pointer"
                   title="Twitter / X"
                 >
                   <Twitter className="w-4 h-4" />
@@ -285,7 +285,7 @@ export default function Contact() {
                   href={PERSONAL_INFO.instagram}
                   target="_blank"
                   rel="noreferrer"
-                  className="p-2 rounded-xl bg-brand-bg/50 dark:bg-black/40 border border-brand-border hover:border-violet-500/40 text-brand-muted hover:text-brand-text transition-all hover:scale-110 flex items-center justify-center cursor-pointer"
+                  className="p-2 rounded-xl bg-brand-bg/50 dark:bg-black/40 border border-brand-border hover:border-yellow-500/40 text-brand-muted hover:text-brand-text transition-all hover:scale-110 flex items-center justify-center cursor-pointer"
                   title="Instagram"
                 >
                   <svg
@@ -307,7 +307,7 @@ export default function Contact() {
                     href={PERSONAL_INFO.facebook}
                     target="_blank"
                     rel="noreferrer"
-                    className="p-2 rounded-xl bg-brand-bg/50 dark:bg-black/40 border border-brand-border hover:border-violet-500/40 text-brand-muted hover:text-brand-text transition-all hover:scale-110 flex items-center justify-center cursor-pointer"
+                    className="p-2 rounded-xl bg-brand-bg/50 dark:bg-black/40 border border-brand-border hover:border-yellow-500/40 text-brand-muted hover:text-brand-text transition-all hover:scale-110 flex items-center justify-center cursor-pointer"
                     title="Facebook"
                   >
                     <Facebook className="w-4 h-4" />
@@ -350,7 +350,7 @@ export default function Contact() {
                         onChange={handleChange}
                         disabled={formStatus === 'sending' || formStatus === 'success'}
                         placeholder="e.g. Satoshi Nakamoto"
-                        className="w-full text-xs font-mono bg-brand-bg/55 dark:bg-black/60 border border-brand-border rounded-xl px-4 py-3 text-brand-text placeholder-brand-muted/40 focus:outline-none focus:border-violet-500/60 dark:focus:border-violet-400/40 transition-colors disabled:opacity-60"
+                        className="w-full text-xs font-mono bg-brand-bg/55 dark:bg-black/60 border border-brand-border rounded-xl px-4 py-3 text-brand-text placeholder-brand-muted/40 focus:outline-none focus:border-yellow-500/60 dark:focus:border-yellow-400/40 transition-colors disabled:opacity-60"
                       />
                     </div>
 
@@ -368,7 +368,7 @@ export default function Contact() {
                         onChange={handleChange}
                         disabled={formStatus === 'sending' || formStatus === 'success'}
                         placeholder="e.g. address@domain.com"
-                        className="w-full text-xs font-mono bg-brand-bg/55 dark:bg-black/60 border border-brand-border rounded-xl px-4 py-3 text-brand-text placeholder-brand-muted/40 focus:outline-none focus:border-violet-500/60 dark:focus:border-violet-400/40 transition-colors disabled:opacity-60"
+                        className="w-full text-xs font-mono bg-brand-bg/55 dark:bg-black/60 border border-brand-border rounded-xl px-4 py-3 text-brand-text placeholder-brand-muted/40 focus:outline-none focus:border-yellow-500/60 dark:focus:border-yellow-400/40 transition-colors disabled:opacity-60"
                       />
                     </div>
 
@@ -386,7 +386,7 @@ export default function Contact() {
                         value={formData.subject}
                         onChange={handleChange}
                         disabled={formStatus === 'sending' || formStatus === 'success'}
-                        className="w-full text-xs font-mono bg-brand-bg/55 dark:bg-black/60 border border-brand-border rounded-xl px-4 py-3 text-brand-text focus:outline-none focus:border-violet-500/60 dark:focus:border-violet-400/40 transition-colors cursor-pointer appearance-none disabled:opacity-60"
+                        className="w-full text-xs font-mono bg-brand-bg/55 dark:bg-black/60 border border-brand-border rounded-xl px-4 py-3 text-brand-text focus:outline-none focus:border-yellow-500/60 dark:focus:border-yellow-400/40 transition-colors cursor-pointer appearance-none disabled:opacity-60"
                       >
                         {inquirySubjects.map((sub) => (
                           <option key={sub} value={sub} className="bg-brand-bg text-brand-text">
@@ -416,7 +416,7 @@ export default function Contact() {
                       onChange={handleChange}
                       disabled={formStatus === 'sending' || formStatus === 'success'}
                       placeholder="Explain your vision, timeline, stack, or hiring opportunity..."
-                      className="w-full text-xs font-mono bg-brand-bg/55 dark:bg-black/60 border border-brand-border rounded-xl px-4 py-3 text-brand-text placeholder-brand-muted/40 focus:outline-none focus:border-violet-500/60 dark:focus:border-violet-400/40 transition-colors resize-none disabled:opacity-60"
+                      className="w-full text-xs font-mono bg-brand-bg/55 dark:bg-black/60 border border-brand-border rounded-xl px-4 py-3 text-brand-text placeholder-brand-muted/40 focus:outline-none focus:border-yellow-500/60 dark:focus:border-yellow-400/40 transition-colors resize-none disabled:opacity-60"
                     />
                   </div>
 
@@ -437,8 +437,8 @@ export default function Contact() {
                           formStatus === 'success'
                             ? 'bg-emerald-500 text-white shadow-[0_4px_20px_rgba(16,185,129,0.3)]'
                             : formStatus === 'sending'
-                            ? 'bg-violet-600/40 text-violet-300 cursor-not-allowed'
-                            : 'bg-gradient-to-r from-violet-600 to-cyan-500 hover:from-violet-500 hover:to-cyan-400 text-white shadow-lg hover:shadow-violet-500/20 hover:scale-[1.02] active:scale-[0.98]'
+                            ? 'bg-yellow-600/40 text-yellow-300 cursor-not-allowed'
+                            : 'bg-gradient-to-r from-yellow-500 to-amber-500 hover:from-yellow-400 hover:to-amber-400 text-zinc-950 shadow-lg hover:shadow-yellow-500/20 hover:scale-[1.02] active:scale-[0.98]'
                         }
                       `}
                     >
