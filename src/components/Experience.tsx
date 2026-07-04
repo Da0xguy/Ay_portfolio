@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Briefcase, Calendar, CheckCircle, Globe, ArrowUpRight } from 'lucide-react';
 import { EXPERIENCES, EDUCATION } from '../data';
@@ -6,6 +6,33 @@ import GlassCard from './GlassCard';
 
 export default function Experience() {
   const [selectedIdx, setSelectedIdx] = useState(0);
+  const detailsRef = useRef<HTMLDivElement>(null);
+
+  const handleSelectExperience = (idx: number) => {
+    setSelectedIdx(idx);
+    
+    if (detailsRef.current) {
+      setTimeout(() => {
+        const element = detailsRef.current;
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          const isFullyVisible = (
+            rect.top >= 100 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+          );
+          
+          if (!isFullyVisible || window.innerWidth < 1024) {
+            const elementPosition = rect.top + window.scrollY;
+            const offsetPosition = elementPosition - 100;
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
+          }
+        }
+      }, 120);
+    }
+  };
 
   return (
     <section id="experience" className="py-24 relative overflow-hidden">
@@ -45,7 +72,7 @@ export default function Experience() {
                   <button
                     key={exp.company}
                     id={`experience-tab-${idx}`}
-                    onClick={() => setSelectedIdx(idx)}
+                    onClick={() => handleSelectExperience(idx)}
                     className="w-full text-left relative cursor-pointer"
                   >
                     <GlassCard
@@ -114,7 +141,7 @@ export default function Experience() {
           </div>
 
           {/* Timeline Details Display Panel (Right) */}
-          <div className="lg:col-span-7 h-full">
+          <div ref={detailsRef} className="lg:col-span-7 h-full">
             <AnimatePresence mode="wait">
               <motion.div
                 key={selectedIdx}

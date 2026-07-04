@@ -8,7 +8,7 @@ import Projects from './components/Projects';
 import Skills from './components/Skills';
 import Contact from './components/Contact';
 import { PERSONAL_INFO } from './data';
-import { Github, Linkedin, Twitter, Instagram, MessageCircle, Mail } from 'lucide-react';
+import { Github, Linkedin, Twitter, Instagram, MessageCircle, Mail, Facebook } from 'lucide-react';
 
 export default function App() {
   const [activeSection, setActiveSection] = useState('home');
@@ -180,6 +180,17 @@ export default function App() {
             >
               <Instagram className="w-4 h-4" />
             </a>
+            {PERSONAL_INFO.facebook && (
+              <a
+                href={PERSONAL_INFO.facebook}
+                target="_blank"
+                rel="noreferrer"
+                className="p-2.5 rounded-xl bg-brand-bg/50 dark:bg-black/40 border border-brand-border hover:border-violet-500/40 text-brand-muted hover:text-brand-text transition-all hover:scale-110 flex items-center justify-center cursor-pointer hover:shadow-sm hover:shadow-violet-500/5"
+                title="Follow on Facebook"
+              >
+                <Facebook className="w-4 h-4" />
+              </a>
+            )}
             <a
               href={PERSONAL_INFO.github}
               target="_blank"

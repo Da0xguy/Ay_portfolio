@@ -10,8 +10,9 @@ export const PERSONAL_INFO = {
   github: 'https://github.com/Da0xguy',
   linkedin: 'https://linkedin.com/in/ayobami-oketona',
   whatsapp: 'https://wa.me/2348165609129',
-  twitter: 'https://x.com/da0xguy',
-  instagram: 'https://instagram.com/da0xguy',
+  twitter: 'https://twitter.com/Ay_bami01',
+  instagram: 'https://www.instagram.com/ay_obami01',
+  facebook: 'https://www.facebook.com/ayo.bami.802834',
   portfolioUrl: 'https://ay-portfolio-lime.vercel.app',
   summary: 'Frontend-focused software developer and product-minded technologist with hands-on experience building modern web and Web3 applications using React, TypeScript, and blockchain tooling. Strong understanding of product strategy and user experience. Comfortable working across engineering and business teams to ship scalable, user-centric solutions.'
 };

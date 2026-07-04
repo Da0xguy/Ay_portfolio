@@ -13,7 +13,8 @@ import {
   Clock, 
   Linkedin, 
   Github, 
-  Twitter 
+  Twitter,
+  Facebook
 } from 'lucide-react';
 import { PERSONAL_INFO } from '../data';
 import GlassCard from './GlassCard';
@@ -280,6 +281,38 @@ export default function Contact() {
                 >
                   <Twitter className="w-4 h-4" />
                 </a>
+                <a
+                  href={PERSONAL_INFO.instagram}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="p-2 rounded-xl bg-brand-bg/50 dark:bg-black/40 border border-brand-border hover:border-violet-500/40 text-brand-muted hover:text-brand-text transition-all hover:scale-110 flex items-center justify-center cursor-pointer"
+                  title="Instagram"
+                >
+                  <svg
+                    className="w-4 h-4"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                  </svg>
+                </a>
+                {PERSONAL_INFO.facebook && (
+                  <a
+                    href={PERSONAL_INFO.facebook}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="p-2 rounded-xl bg-brand-bg/50 dark:bg-black/40 border border-brand-border hover:border-violet-500/40 text-brand-muted hover:text-brand-text transition-all hover:scale-110 flex items-center justify-center cursor-pointer"
+                    title="Facebook"
+                  >
+                    <Facebook className="w-4 h-4" />
+                  </a>
+                )}
               </div>
             </GlassCard>
 
