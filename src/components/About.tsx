@@ -1,6 +1,7 @@
 import { User, Shield, Terminal, Target, ArrowUpRight } from 'lucide-react';
 import { motion } from 'motion/react';
 import GlassCard from './GlassCard';
+import { staggerContainer, staggerItem } from '../utils/animations';
 
 export default function About() {
   const philosophies = [
@@ -28,13 +29,16 @@ export default function About() {
         <div className="glass-glow w-[350px] h-[350px] top-1/4 left-1/10 bg-yellow-500/5" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <motion.div
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: '-100px' }}
+        className="max-w-7xl mx-auto px-6 relative z-10"
+      >
         {/* Title */}
         <motion.div 
-          initial={{ opacity: 0, y: 15 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-100px' }}
-          transition={{ duration: 0.6 }}
+          variants={staggerItem}
           className="flex flex-col items-center text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-brand-text font-display">
@@ -47,10 +51,10 @@ export default function About() {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
           {/* Main Biography Column */}
-          <div className="lg:col-span-7 flex flex-col justify-between">
+          <motion.div variants={staggerItem} className="lg:col-span-7 flex flex-col justify-between">
             <GlassCard
               hoverEffect={true}
-              className="p-8 h-full flex flex-col justify-between text-left"
+              className="p-6 sm:p-8 h-full flex flex-col justify-between text-left"
             >
               <div className="space-y-6">
                 <div className="flex items-center gap-3">
@@ -93,14 +97,13 @@ export default function About() {
                 </a>
               </div>
             </GlassCard>
-          </div>
+          </motion.div>
 
           {/* Quick Pillars/Characteristics Column */}
           <div className="lg:col-span-5 flex flex-col gap-6 justify-between">
             {philosophies.map((phil, idx) => (
-              <div key={phil.title} className="flex-1 flex flex-col">
+              <motion.div key={phil.title} variants={staggerItem} className="flex-1 flex flex-col">
                 <GlassCard
-                  delay={idx * 0.1}
                   className="p-6 text-left flex-1 flex flex-col justify-center h-full"
                 >
                   <div className="flex gap-4 items-start">
@@ -117,11 +120,11 @@ export default function About() {
                     </div>
                   </div>
                 </GlassCard>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

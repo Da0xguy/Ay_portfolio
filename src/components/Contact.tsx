@@ -18,6 +18,7 @@ import {
 } from 'lucide-react';
 import { PERSONAL_INFO } from '../data';
 import GlassCard from './GlassCard';
+import { staggerContainer, staggerItem } from '../utils/animations';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -79,13 +80,16 @@ export default function Contact() {
         <div className="glass-glow w-[350px] h-[350px] bottom-1/4 left-1/10 bg-amber-500/5 dark:bg-amber-500/5 animate-soft-pulse" style={{ animationDelay: '3s' }} />
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
+      <motion.div
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: '-100px' }}
+        className="max-w-7xl mx-auto px-6 relative z-10 w-full"
+      >
         {/* Section Heading */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-100px' }}
-          transition={{ duration: 0.6 }}
+          variants={staggerItem}
           className="flex flex-col items-center text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-brand-text font-display">
@@ -98,10 +102,10 @@ export default function Contact() {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
           {/* Left Column: Direct Info Cards & Interactive Links (5 cols) */}
-          <div className="lg:col-span-5 flex flex-col justify-between space-y-6">
+          <motion.div variants={staggerItem} className="lg:col-span-5 flex flex-col justify-between space-y-6">
             
             {/* Direct Channels Glass Card */}
-            <GlassCard hoverEffect={false} className="p-6 text-left flex-1 flex flex-col justify-between">
+            <GlassCard hoverEffect={false} className="p-5 sm:p-6 text-left flex-1 flex flex-col justify-between">
               <div>
                 <div className="flex items-center gap-3 mb-6">
                   <div className="p-2.5 rounded-xl border flex items-center justify-center bg-brand-bg/60 dark:bg-white/5 border-brand-border text-brand-accent">
@@ -316,11 +320,11 @@ export default function Contact() {
               </div>
             </GlassCard>
 
-          </div>
+          </motion.div>
 
           {/* Right Column: Fully Interactive Message Form (7 cols) */}
-          <div className="lg:col-span-7">
-            <GlassCard hoverEffect={false} className="p-8 text-left h-full flex flex-col justify-between">
+          <motion.div variants={staggerItem} className="lg:col-span-7">
+            <GlassCard hoverEffect={false} className="p-5 sm:p-8 text-left h-full flex flex-col justify-between">
               
               <div className="w-full">
                 {/* Form Header */}
@@ -497,10 +501,10 @@ export default function Contact() {
               </AnimatePresence>
 
             </GlassCard>
-          </div>
+          </motion.div>
 
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

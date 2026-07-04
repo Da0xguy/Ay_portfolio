@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Briefcase, Calendar, CheckCircle, Globe, ArrowUpRight } from 'lucide-react';
 import { EXPERIENCES, EDUCATION } from '../data';
 import GlassCard from './GlassCard';
+import { staggerContainer, staggerItem } from '../utils/animations';
 
 export default function Experience() {
   const [selectedIdx, setSelectedIdx] = useState(0);
@@ -34,13 +35,16 @@ export default function Experience() {
         <div className="glass-glow w-[400px] h-[400px] top-1/3 right-0 bg-white/5" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <motion.div
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: '-100px' }}
+        className="max-w-7xl mx-auto px-6 relative z-10"
+      >
         {/* Title */}
         <motion.div 
-          initial={{ opacity: 0, y: 15 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-100px' }}
-          transition={{ duration: 0.6 }}
+          variants={staggerItem}
           className="flex flex-col items-center text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-brand-text font-display">
@@ -53,7 +57,7 @@ export default function Experience() {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
           {/* Timeline Selector Panel (Left) */}
-          <div className="lg:col-span-5 space-y-3">
+          <motion.div variants={staggerItem} className="lg:col-span-5 space-y-3">
             <h3 className="text-xs font-mono font-semibold uppercase tracking-wider text-brand-muted/70 mb-4 pl-4 text-left">
               Companies & Collaborations
             </h3>
@@ -70,7 +74,7 @@ export default function Experience() {
                   >
                     <GlassCard
                       hoverEffect={!isSelected}
-                      className={`p-5 transition-all relative ${
+                      className={`p-4 sm:p-5 transition-all relative ${
                         isSelected
                           ? 'border-yellow-500/30 bg-yellow-500/5 dark:bg-white/5 shadow-md'
                           : 'border-brand-border/40 bg-brand-bg/40 hover:bg-brand-bg/80'
@@ -112,7 +116,7 @@ export default function Experience() {
               <h3 className="text-xs font-mono font-semibold uppercase tracking-wider text-brand-muted/70 mb-4 pl-4 text-left">
                 Education
               </h3>
-              <GlassCard className="p-5 border-dashed border-brand-border hover:border-brand-accent/30 bg-brand-bg/20">
+              <GlassCard className="p-4 sm:p-5 border-dashed border-brand-border hover:border-brand-accent/30 bg-brand-bg/20">
                 <div className="flex gap-4 items-start pl-1">
                   <div className="p-2.5 rounded-xl border flex items-center justify-center bg-brand-bg/60 dark:bg-white/5 border-brand-border text-brand-accent">
                     <Briefcase className="w-4 h-4" />
@@ -131,10 +135,10 @@ export default function Experience() {
                 </div>
               </GlassCard>
             </div>
-          </div>
+          </motion.div>
 
           {/* Timeline Details Display Panel (Right) */}
-          <div ref={detailsRef} className="lg:col-span-7 h-full">
+          <motion.div variants={staggerItem} ref={detailsRef} className="lg:col-span-7 h-full">
             <AnimatePresence mode="wait">
               <motion.div
                 key={selectedIdx}
@@ -146,7 +150,7 @@ export default function Experience() {
               >
                 <GlassCard
                   hoverEffect={false}
-                  className="p-8 h-full text-left"
+                  className="p-6 sm:p-8 h-full text-left"
                 >
                   {/* Glowing header info */}
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-brand-border mb-6">
@@ -210,9 +214,9 @@ export default function Experience() {
                 </GlassCard>
               </motion.div>
             </AnimatePresence>
-          </div>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

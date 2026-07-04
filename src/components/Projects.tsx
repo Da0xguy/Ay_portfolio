@@ -4,6 +4,7 @@ import { ExternalLink, Github, ArrowRight, X, Sparkles, Check } from 'lucide-rea
 import { PROJECTS } from '../data';
 import { Project } from '../types';
 import GlassCard from './GlassCard';
+import { staggerContainer, staggerItem } from '../utils/animations';
 
 export default function Projects() {
   const [activeTab, setActiveTab] = useState<'all' | 'web3' | 'frontend' | 'fullstack'>('all');
@@ -27,13 +28,16 @@ export default function Projects() {
         <div className="glass-glow w-[500px] h-[500px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-yellow-500/5 dark:bg-amber-500/10" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <motion.div
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: '-100px' }}
+        className="max-w-7xl mx-auto px-6 relative z-10"
+      >
         {/* Title */}
         <motion.div 
-          initial={{ opacity: 0, y: 15 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-100px' }}
-          transition={{ duration: 0.6 }}
+          variants={staggerItem}
           className="flex flex-col items-center text-center mb-14"
         >
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-brand-text font-display">
@@ -45,12 +49,8 @@ export default function Projects() {
         </motion.div>
 
         {/* Tab Filters */}
-        <div className="relative max-w-full mb-14">
-          <motion.div 
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-100px' }}
-            transition={{ duration: 0.6, delay: 0.15 }}
+        <motion.div variants={staggerItem} className="relative max-w-full mb-14">
+          <div 
             className="flex items-center gap-2.5 overflow-x-auto no-scrollbar justify-start md:justify-center px-6 md:px-0 flex-nowrap md:flex-wrap py-2"
           >
             {filterTabs.map((tab) => (
@@ -78,11 +78,11 @@ export default function Projects() {
                 )}
               </button>
             ))}
-          </motion.div>
+          </div>
           {/* Edge fade gradients for mobile swiping visual indicators */}
           <div className="absolute top-0 bottom-0 left-0 w-6 bg-gradient-to-r from-brand-bg to-transparent pointer-events-none md:hidden" />
           <div className="absolute top-0 bottom-0 right-0 w-6 bg-gradient-to-l from-brand-bg to-transparent pointer-events-none md:hidden" />
-        </div>
+        </motion.div>
 
         {/* Grid */}
         <motion.div
@@ -93,14 +93,12 @@ export default function Projects() {
             <motion.div
               layout
               key={project.id}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.04 }}
+              variants={staggerItem}
             >
               <GlassCard
                 onClick={() => setSelectedProject(project)}
                 tilt={true}
-                className="p-6 text-left flex flex-col justify-between h-full group cursor-pointer border-brand-border/40 hover:border-yellow-500/30 transition-colors duration-300"
+                className="p-5 sm:p-6 text-left flex flex-col justify-between h-full group cursor-pointer border-brand-border/40 hover:border-yellow-500/30 transition-colors duration-300"
               >
                 {/* Visual Accent Glow on card top */}
                 <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-yellow-500 via-amber-500 to-yellow-600 opacity-20 group-hover:opacity-100 transition-opacity" />
@@ -163,7 +161,7 @@ export default function Projects() {
             </motion.div>
           ))}
         </motion.div>
-      </div>
+      </motion.div>
 
       {/* Details Slide-up Dialog Drawer */}
       <AnimatePresence>

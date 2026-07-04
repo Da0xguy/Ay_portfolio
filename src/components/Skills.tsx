@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion } from 'motion/react';
 import { SKILLS } from '../data';
 import GlassCard from './GlassCard';
+import { staggerContainer, staggerItem } from '../utils/animations';
 
 export default function Skills() {
   const [activeCategory, setActiveCategory] = useState<'all' | 'frontend' | 'web3' | 'tools'>('all');
@@ -143,13 +144,16 @@ export default function Skills() {
         <div className="glass-glow w-[380px] h-[380px] bottom-1/4 left-1/5 bg-yellow-500/5 dark:bg-amber-500/10" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <motion.div
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: '-100px' }}
+        className="max-w-7xl mx-auto px-6 relative z-10"
+      >
         {/* Title */}
         <motion.div 
-          initial={{ opacity: 0, y: 15 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-100px' }}
-          transition={{ duration: 0.6 }}
+          variants={staggerItem}
           className="flex flex-col items-center text-center mb-14"
         >
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-brand-text font-display">
@@ -161,12 +165,8 @@ export default function Skills() {
         </motion.div>
 
         {/* Category Selector Tabs */}
-        <div className="relative max-w-full mb-12">
-          <motion.div 
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-100px' }}
-            transition={{ duration: 0.6, delay: 0.15 }}
+        <motion.div variants={staggerItem} className="relative max-w-full mb-12">
+          <div 
             className="flex items-center gap-2 overflow-x-auto no-scrollbar justify-start md:justify-center px-6 md:px-0 flex-nowrap md:flex-wrap py-2"
           >
             {categories.map((cat) => (
@@ -194,11 +194,11 @@ export default function Skills() {
                 )}
               </button>
             ))}
-          </motion.div>
+          </div>
           {/* Edge fade gradients for mobile swiping visual indicators */}
           <div className="absolute top-0 bottom-0 left-0 w-6 bg-gradient-to-r from-brand-bg to-transparent pointer-events-none md:hidden" />
           <div className="absolute top-0 bottom-0 right-0 w-6 bg-gradient-to-l from-brand-bg to-transparent pointer-events-none md:hidden" />
-        </div>
+        </motion.div>
 
         {/* Skills Grid */}
         <motion.div
@@ -209,12 +209,10 @@ export default function Skills() {
             <motion.div
               layout
               key={skill.name}
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.4, delay: index * 0.03 }}
+              variants={staggerItem}
             >
               <GlassCard
-                className="p-6 text-left h-full flex flex-col justify-between"
+                className="p-5 sm:p-6 text-left h-full flex flex-col justify-between"
               >
                 <div>
                   {/* Skill Card Header */}
@@ -270,7 +268,7 @@ export default function Skills() {
             </motion.div>
           ))}
         </motion.div>
-      </div>
+      </motion.div>
     </section>
   );
 }

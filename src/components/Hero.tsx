@@ -2,6 +2,7 @@ import { motion } from 'motion/react';
 import { Mail, Phone, Github, MapPin, Copy, Check, ArrowUpRight, Sparkles, Linkedin, Twitter, Instagram, MessageCircle, FileDown } from 'lucide-react';
 import { useState } from 'react';
 import { PERSONAL_INFO } from '../data';
+import { generateResumePDF } from '../utils/resumeGenerator';
 
 export default function Hero() {
   const [copied, setCopied] = useState(false);
@@ -79,12 +80,12 @@ export default function Hero() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex flex-wrap gap-4 w-full mb-10"
+            className="flex flex-col sm:flex-row flex-wrap gap-4 w-full mb-10"
           >
             <button
               id="hero-play-btn"
               onClick={() => handleScrollTo('projects')}
-              className="px-6 py-3.5 rounded-2xl text-sm font-bold transition-all flex items-center gap-2 cursor-pointer hover:scale-[1.02] active:scale-[0.98] shadow-[0_4px_20px_rgba(234,179,8,0.12)] dark:shadow-[0_4px_25px_rgba(234,179,8,0.25)] bg-gradient-to-r from-yellow-500 via-amber-500 to-yellow-600 hover:from-yellow-400 hover:to-amber-400 text-zinc-950 border-0"
+              className="px-6 py-3.5 rounded-2xl text-sm font-bold transition-all flex items-center justify-center gap-2 cursor-pointer hover:scale-[1.02] active:scale-[0.98] shadow-[0_4px_20px_rgba(234,179,8,0.12)] dark:shadow-[0_4px_25px_rgba(234,179,8,0.25)] bg-gradient-to-r from-yellow-500 via-amber-500 to-yellow-600 hover:from-yellow-400 hover:to-amber-400 text-zinc-950 border-0 w-full sm:w-auto"
             >
               Explore Projects
               <ArrowUpRight className="w-4 h-4" />
@@ -93,23 +94,20 @@ export default function Hero() {
             <button
               id="hero-cli-btn"
               onClick={() => handleScrollTo('experience')}
-              className="px-6 py-3.5 rounded-2xl text-sm font-medium bg-brand-bg/50 dark:bg-black/80 border border-brand-border hover:border-brand-accent/40 text-brand-muted hover:text-brand-text transition-all flex items-center gap-2 cursor-pointer"
+              className="px-6 py-3.5 rounded-2xl text-sm font-medium bg-brand-bg/50 dark:bg-black/80 border border-brand-border hover:border-brand-accent/40 text-brand-muted hover:text-brand-text transition-all flex items-center justify-center gap-2 cursor-pointer w-full sm:w-auto"
             >
               View Journey
               <ArrowUpRight className="w-4 h-4" />
             </button>
 
-            <a
+            <button
               id="hero-resume-btn"
-              href={PERSONAL_INFO.resumeUrl}
-              download="Oketona_Samuel_Ayobami_Resume.pdf"
-              target="_blank"
-              rel="noreferrer"
-              className="px-6 py-3.5 rounded-2xl text-sm font-medium bg-white/5 dark:bg-zinc-900/30 backdrop-blur-md border border-brand-border/60 hover:border-yellow-500/50 text-brand-text hover:text-yellow-500 hover:shadow-[0_0_20px_rgba(234,179,8,0.15)] transition-all duration-300 flex items-center gap-2 cursor-pointer hover:scale-[1.02] active:scale-[0.98] group"
+              onClick={generateResumePDF}
+              className="px-6 py-3.5 rounded-2xl text-sm font-medium bg-white/5 dark:bg-zinc-900/30 backdrop-blur-md border border-brand-border/60 hover:border-yellow-500/50 text-brand-text hover:text-yellow-500 hover:shadow-[0_0_20px_rgba(234,179,8,0.15)] transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer hover:scale-[1.02] active:scale-[0.98] group w-full sm:w-auto"
             >
               Download Resume
               <FileDown className="w-4 h-4 text-brand-muted group-hover:text-yellow-500 transition-colors" />
-            </a>
+            </button>
           </motion.div>
 
           {/* Socials & Quick Contact */}
