@@ -38,9 +38,9 @@ export default function Projects() {
         {/* Title */}
         <motion.div 
           variants={staggerItem}
-          className="flex flex-col items-center text-center mb-14"
+          className="flex flex-col items-center text-center mb-10 sm:mb-14"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-brand-text font-display">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-brand-text font-display">
             Featured <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-500 font-extrabold">Works</span>
           </h2>
           <p className="text-brand-muted text-sm sm:text-base font-sans mt-3 max-w-xl">

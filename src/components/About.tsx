@@ -39,9 +39,9 @@ export default function About() {
         {/* Title */}
         <motion.div 
           variants={staggerItem}
-          className="flex flex-col items-center text-center mb-16"
+          className="flex flex-col items-center text-center mb-12 sm:mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-brand-text font-display">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-brand-text font-display">
             About <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-500 font-extrabold">Me</span>
           </h2>
           <p className="text-brand-muted text-sm sm:text-base mt-3 max-w-xl">

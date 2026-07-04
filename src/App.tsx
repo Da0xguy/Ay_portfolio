@@ -58,7 +58,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-brand-bg text-brand-text font-sans relative transition-colors duration-300">
+    <div className="min-h-screen bg-brand-bg text-brand-text font-sans relative transition-colors duration-300 overflow-x-hidden w-full max-w-full">
       {/* Absolute Dynamic Glowing Nodes - Pure Lively Gradient Glow */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
         <div className="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] rounded-full blur-[130px] opacity-[0.06] dark:opacity-[0.10] bg-gradient-to-tr from-yellow-500 to-amber-500" />
@@ -74,7 +74,7 @@ export default function App() {
       />
 
       {/* Main Sections */}
-      <main className="relative z-10">
+      <main className="relative z-10 overflow-hidden w-full max-w-full">
         {/* Continuous technical vertical track lines down the margin on desktop */}
         <div className="absolute left-[6%] top-[800px] bottom-[200px] w-[1px] bg-gradient-to-b from-transparent via-yellow-500/10 to-transparent hidden xl:block pointer-events-none" />
         <div className="absolute right-[6%] top-[1400px] bottom-[400px] w-[1px] bg-gradient-to-b from-transparent via-amber-500/10 to-transparent hidden xl:block pointer-events-none" />

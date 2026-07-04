@@ -42,7 +42,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl sm:text-6xl font-bold font-display tracking-tight text-brand-text leading-tight mb-4"
+            className="text-3xl sm:text-5xl md:text-6xl font-bold font-display tracking-tight text-brand-text leading-tight mb-4"
           >
             I am <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-500 font-extrabold tracking-wide decoration-yellow-500/30 underline underline-offset-8">{PERSONAL_INFO.nickname}</span>,
             <br />
@@ -54,13 +54,13 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="flex items-center gap-2 text-sm text-brand-muted mb-6 font-mono"
+            className="flex items-center gap-2 text-xs sm:text-sm text-brand-muted mb-6 font-mono"
           >
-            <MapPin className="w-4 h-4 text-brand-muted/70" />
+            <MapPin className="w-3.5 h-3.5 text-brand-muted/70" />
             <span>{PERSONAL_INFO.location}</span>
             <span className="text-brand-muted/40">•</span>
             <span className="flex items-center gap-1">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
               Open to Web3 roles
             </span>
           </motion.div>
@@ -70,7 +70,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-base sm:text-lg text-brand-muted font-sans font-light leading-relaxed mb-8 max-w-xl"
+            className="text-sm sm:text-base md:text-lg text-brand-muted font-sans font-light leading-relaxed mb-8 max-w-xl"
           >
             Frontend-focused software developer and product-minded technologist crafting high-performance user interfaces and decentralized Web3 solutions.
           </motion.p>

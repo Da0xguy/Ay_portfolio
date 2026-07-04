@@ -15,7 +15,7 @@ export const PERSONAL_INFO = {
   facebook: 'https://www.facebook.com/ayo.bami.802834',
   portfolioUrl: 'https://ay-portfolio-lime.vercel.app',
   resumeUrl: '#', // Replace with a downloadable PDF path or external link when ready
-  summary: 'Frontend-focused software developer and product-minded technologist with hands-on experience building modern web and Web3 applications using React, TypeScript, and blockchain tooling. Strong understanding of product strategy and user experience. Comfortable working across engineering and business teams to ship scalable, user-centric solutions.'
+  summary: 'Frontend Engineer & Web3 Developer specializing in high-performance responsive interfaces, blockchain UX, type-safe TypeScript codebases, and clean layouts.'
 };
 
 export const PROJECTS: Project[] = [
@@ -175,11 +175,10 @@ export const EXPERIENCES: Experience[] = [
   {
     role: 'Frontend Engineer & Web3 Developer',
     company: 'Team Sushi.sui',
-    period: 'Web3 Core Contributor',
+    period: 'Web3 Contributor',
     description: [
-      'Developed modern Web3 frontends on the Sui Blockchain, incorporating custom smart contract interactions and signature verification.',
-      'Designed and engineered high-fidelity glassmorphic user dashboards with complex state management.',
-      'Optimized wallet connection latency and transaction tracking interfaces using customized wallet hook integration.'
+      'Developed modern Web3 frontends on Sui with custom wallet connections and signature verification.',
+      'Designed high-fidelity glassmorphic user dashboards with optimized transaction tracking.'
     ]
   },
   {
@@ -187,9 +186,8 @@ export const EXPERIENCES: Experience[] = [
     company: 'Trueminds Innovation Ltd',
     period: 'Professional Internship',
     description: [
-      'Led a dynamic team of developers in shipping highly modular and scalable web applications.',
-      'Maintained rigorous frontend coding standards, reviewed pull requests, and mentored junior interns in React and TypeScript.',
-      'Interfaced with business analysts and product managers to translate feature specs into pixel-perfect Tailwind layouts.'
+      'Led teams of developers to build and ship modular, scalable React/TypeScript applications.',
+      'Maintained high code standards and translated designer specs into pixel-perfect Tailwind layouts.'
     ]
   },
   {
@@ -197,9 +195,8 @@ export const EXPERIENCES: Experience[] = [
     company: 'Next Epoch Labs',
     period: 'Collaborator',
     description: [
-      'Built reactive, low-latency interfaces for cutting-edge decentralized systems.',
-      'Crafted high-performance custom animations and smooth scroll interactions, elevating the general user experience and retention.',
-      'Integrated secure, decentralized REST/GraphQL APIs and managed client-side data caching strategies.'
+      'Built reactive, low-latency Web3 interfaces with high-performance framer/motion animations.',
+      'Integrated GraphQL and REST APIs with optimized client-side state and local caching.'
     ]
   },
   {
@@ -208,9 +205,8 @@ export const EXPERIENCES: Experience[] = [
     period: 'Product Launch',
     isCurrent: true,
     description: [
-      'Worked hands-on to build and ship Payfrica (payfrica.xyz), a live and fully functional modern payment corridor solution for African markets.',
-      'Engineered state-of-the-art secure inputs, nested transaction flows, and beautiful financial dashboards.',
-      'Optimized performance across lower-end devices and slow networking environments, cutting layout shifts to zero.'
+      'Engineered the live payment corridor solution Payfrica (payfrica.xyz) for African markets.',
+      'Developed secure transaction flows, user-friendly forms, and dashboards optimized for lower-end devices.'
     ]
   }
 ];
@@ -218,5 +214,5 @@ export const EXPERIENCES: Experience[] = [
 export const EDUCATION = {
   degree: 'Bachelor of Chemical Engineering (Student)',
   institution: 'University Coursework',
-  focus: 'Strong academic focus on technology, engineering concepts, systems analysis, and applied mathematical problem solving (calculus, matrices, optimization).'
+  focus: 'Academic focus on systems analysis, technical workflows, and engineering problem-solving.'
 };
