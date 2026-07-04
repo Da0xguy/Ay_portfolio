@@ -1,0 +1,6 @@
+{
+  "name": "Ayobami Portfolio",
+  "description": "A glassy, interactive Web3 and Frontend Developer portfolio website for Oketona Samuel Ayobami (Ay).",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
