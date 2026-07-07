@@ -1,12 +1,58 @@
 import { motion } from 'motion/react';
 import { Mail, Phone, Github, MapPin, Copy, Check, ArrowUpRight, Sparkles, Linkedin, Twitter, Instagram, MessageCircle, FileDown } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { PERSONAL_INFO } from '../data';
 import { generateResumePDF } from '../utils/resumeGenerator';
 import avatarImg from '../assets/images/user_avatar_1783463091970.jpg';
 
 export default function Hero() {
   const [copied, setCopied] = useState(false);
+  const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
+  const [displayText, setDisplayText] = useState('');
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  const roles = [
+    'Frontend Engineer',
+    'Web3 Developer',
+    'React Specialist',
+    'Sui Contributor'
+  ];
+
+  useEffect(() => {
+    let timer: any;
+    const activeRole = roles[currentRoleIndex];
+
+    const handleTyping = () => {
+      if (!isDeleting) {
+        // Add character
+        setDisplayText(activeRole.substring(0, displayText.length + 1));
+
+        if (displayText === activeRole) {
+          // Stay fully typed for 2 seconds
+          timer = setTimeout(() => setIsDeleting(true), 2000);
+        } else {
+          // Speed of typing next character
+          timer = setTimeout(handleTyping, 90);
+        }
+      } else {
+        // Remove character
+        setDisplayText(activeRole.substring(0, displayText.length - 1));
+
+        if (displayText === '') {
+          setIsDeleting(false);
+          // Move to next role
+          setCurrentRoleIndex((prev) => (prev + 1) % roles.length);
+        } else {
+          // Speed of deleting next character
+          timer = setTimeout(handleTyping, 45);
+        }
+      }
+    };
+
+    timer = setTimeout(handleTyping, isDeleting ? 45 : 95);
+
+    return () => clearTimeout(timer);
+  }, [displayText, isDeleting, currentRoleIndex]);
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(PERSONAL_INFO.email);
@@ -68,7 +114,14 @@ export default function Hero() {
           >
             I am <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-500 font-extrabold tracking-wide decoration-yellow-500/30 underline underline-offset-8">{PERSONAL_INFO.nickname}</span>,
             <br />
-            Frontend Developer.
+            <span className="inline-block text-brand-accent min-h-[1.2em]">
+              {displayText}
+              <motion.span
+                animate={{ opacity: [1, 0, 1] }}
+                transition={{ duration: 0.8, repeat: Infinity, ease: 'easeInOut' }}
+                className="inline-block w-[3px] h-[0.9em] ml-1.5 bg-gradient-to-t from-yellow-400 to-amber-500 align-middle"
+              />
+            </span>
           </motion.h1>
 
           {/* Location Badge */}
