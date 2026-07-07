@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Menu, X, Cpu, Sun, Moon } from 'lucide-react';
+import { Menu, X, Sun, Moon } from 'lucide-react';
+import avatarImg from '../assets/images/user_avatar_1783463091970.jpg';
 
 interface NavbarProps {
   activeSection: string;
@@ -54,10 +55,10 @@ export default function Navbar({
   return (
     <motion.nav
       id="main-navbar"
-      initial={{ y: -100, x: '-50%', opacity: 0 }}
-      animate={{ y: 0, x: '-50%', opacity: 1 }}
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, type: 'spring', stiffness: 120, damping: 18 }}
-      className={`fixed left-1/2 z-40 transition-all duration-500 ease-out ${
+      className={`fixed left-0 right-0 mx-auto z-40 transition-all duration-500 ease-out ${
         isScrolled
           ? 'top-4 w-[92%] sm:w-[85%] max-w-4xl rounded-2xl bg-brand-bg/85 dark:bg-black/80 border border-brand-border shadow-[0_20px_50px_rgba(0,0,0,0.1)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.8)] backdrop-blur-xl py-3 px-5 sm:px-8'
           : 'top-0 w-full rounded-none bg-transparent border-b border-transparent py-6 px-6 sm:px-12'
@@ -74,8 +75,13 @@ export default function Navbar({
           }}
           className="flex items-center gap-2 group cursor-pointer"
         >
-          <div className="relative flex items-center justify-center w-9 h-9 rounded-xl bg-gradient-to-tr from-yellow-500 via-amber-500 to-yellow-600 dark:from-black dark:to-slate-900 border border-brand-border group-hover:border-brand-accent/40 transition-all">
-            <Cpu className="w-4 h-5 transition-transform group-hover:scale-110 text-white" />
+          <div className="relative flex items-center justify-center w-9 h-9 rounded-xl overflow-hidden border border-brand-border group-hover:border-brand-accent/40 transition-all">
+            <img 
+              src={avatarImg} 
+              alt="AY Logo" 
+              className="w-full h-full object-cover transition-transform group-hover:scale-110" 
+              referrerPolicy="no-referrer" 
+            />
             <div className="absolute inset-0 rounded-xl bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity" />
           </div>
           <span className="font-display text-sm tracking-widest font-semibold text-brand-text">

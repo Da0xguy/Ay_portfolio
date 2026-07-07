@@ -3,6 +3,7 @@ import { Mail, Phone, Github, MapPin, Copy, Check, ArrowUpRight, Sparkles, Linke
 import { useState } from 'react';
 import { PERSONAL_INFO } from '../data';
 import { generateResumePDF } from '../utils/resumeGenerator';
+import avatarImg from '../assets/images/user_avatar_1783463091970.jpg';
 
 export default function Hero() {
   const [copied, setCopied] = useState(false);
@@ -37,12 +38,33 @@ export default function Hero() {
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10 w-full">
         {/* Left Side: Copywriting */}
         <div className="lg:col-span-7 flex flex-col items-start text-left">
+          {/* Mobile profile avatar picture - shown on mobile/tablet, hidden on large desktop */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            className="flex lg:hidden items-center gap-4 mb-6"
+          >
+            <div className="relative w-16 h-16 rounded-2xl overflow-hidden border-2 border-brand-accent/30 shadow-[0_0_20px_rgba(234,179,8,0.15)]">
+              <img 
+                src={avatarImg} 
+                alt="Ayobami Oketona Portrait" 
+                className="w-full h-full object-cover"
+                referrerPolicy="no-referrer"
+              />
+            </div>
+            <div>
+              <span className="text-[10px] font-mono text-brand-accent uppercase tracking-widest block font-bold mb-0.5">Web3 Frontend Developer</span>
+              <h2 className="text-base font-bold text-brand-text tracking-wide">{PERSONAL_INFO.nickname}</h2>
+            </div>
+          </motion.div>
+
           {/* Heading */}
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-3xl sm:text-5xl md:text-6xl font-bold font-display tracking-tight text-brand-text leading-tight mb-4"
+            className="text-2xl xs:text-3xl sm:text-5xl md:text-6xl font-bold font-display tracking-tight text-brand-text leading-tight mb-4"
           >
             I am <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-500 font-extrabold tracking-wide decoration-yellow-500/30 underline underline-offset-8">{PERSONAL_INFO.nickname}</span>,
             <br />
@@ -54,7 +76,7 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="flex items-center gap-2 text-xs sm:text-sm text-brand-muted mb-6 font-mono"
+            className="flex items-center gap-1.5 text-[10px] xs:text-xs sm:text-sm text-brand-muted mb-6 font-mono"
           >
             <MapPin className="w-3.5 h-3.5 text-brand-muted/70" />
             <span>{PERSONAL_INFO.location}</span>
@@ -70,9 +92,9 @@ export default function Hero() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-sm sm:text-base md:text-lg text-brand-muted font-sans font-light leading-relaxed mb-8 max-w-xl"
+            className="text-xs sm:text-sm md:text-base text-brand-muted font-sans font-light leading-relaxed mb-8 max-w-xl"
           >
-            Frontend-focused software developer and product-minded technologist crafting high-performance user interfaces and decentralized Web3 solutions.
+            Specializing in high-performance React web applications and decentralized Web3 user experiences.
           </motion.p>
 
           {/* Main Action Buttons */}
@@ -220,34 +242,21 @@ export default function Hero() {
           >
             {/* Background floating orbital element */}
             <motion.div
-              className="absolute inset-4 rounded-full border border-dashed border-brand-border pointer-events-none"
+              className="absolute inset-4 rounded-full border border-dashed border-brand-accent/20 pointer-events-none"
               animate={{ rotate: 360 }}
               transition={{ duration: 25, repeat: Infinity, ease: 'linear' }}
             />
 
-            {/* Glowing Center core */}
-            <div className="absolute inset-[30%] rounded-full opacity-30 dark:opacity-20 filter blur-2xl animate-soft-pulse bg-gradient-to-tr from-yellow-500 to-amber-500" />
-
-            {/* Glass layer 1: Background Layer */}
-            <motion.div
-              className="absolute inset-[15%] glass-panel rounded-3xl p-5 border shadow-2xl flex flex-col justify-between"
-              animate={{
-                y: [0, -10, 0],
-                rotateX: [0, 8, 0],
-                rotateY: [0, -8, 0]
-              }}
-              transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-            >
-              <div className="flex justify-between items-start">
-                <div className="w-2.5 h-2.5 rounded-full bg-brand-muted/40" />
-                <span className="font-mono text-[9px] text-brand-muted tracking-wider">SYSTEM STATUS</span>
-              </div>
-              <div className="font-mono text-left text-[11px] text-brand-muted space-y-1">
-                <div className="text-emerald-500 font-semibold">✔ APP_CORE DEPLOYED</div>
-                <div>CLIENT_ID: DA0XGUY</div>
-                <div>FRAMEWORK: REACT + TS</div>
-              </div>
-            </motion.div>
+            {/* Centered Profile Picture Centerpiece */}
+            <div className="absolute inset-[15%] rounded-full overflow-hidden border-2 border-brand-accent/30 shadow-[0_0_50px_rgba(234,179,8,0.25)] bg-black/40 backdrop-blur-md">
+              <img 
+                src={avatarImg} 
+                alt="Ayobami Oketona Portrait" 
+                className="w-full h-full object-cover select-none scale-[1.03]"
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+            </div>
 
             {/* Glass layer 2: Foreground overlapping Layer */}
             <motion.div

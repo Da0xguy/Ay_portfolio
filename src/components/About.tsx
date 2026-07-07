@@ -8,17 +8,17 @@ export default function About() {
     {
       icon: <Terminal className="w-5 h-5 text-brand-accent" />,
       title: "Clean Execution",
-      description: "Writing scalable, statically typed TypeScript coupled with strict component design patterns for robust layouts."
+      description: "Type-safe, modular TypeScript coupled with rigid component design and clean layouts."
     },
     {
       icon: <Shield className="w-5 h-5 text-brand-accent" />,
       title: "Web3 Authenticity",
-      description: "Direct on-chain state integration, signature handling, and fluid wallet interaction pipelines built native to the browser."
+      description: "Direct wallet integrations, custom signature handshakes, and Sui Move contract states."
     },
     {
       icon: <Target className="w-5 h-5 text-brand-accent" />,
-      title: "Product-Minded",
-      description: "Translating ambiguous product strategy into pixel-perfect frontend experiences that deliver high user engagement."
+      title: "Product Mindset",
+      description: "Translating engineering power into user-centric, beautiful, and highly engaging interfaces."
     }
   ];
 
@@ -73,13 +73,10 @@ export default function About() {
 
                 <div className="space-y-4 text-brand-muted/90 text-sm sm:text-base font-light leading-relaxed">
                   <p>
-                    I am a frontend-focused software developer based in <span className="text-brand-text font-semibold">Abuja, Nigeria</span>. My passion is bridging the gap between rigorous engineering backend pipelines and gorgeous, fluid, and intuitive user experiences.
+                    I am a frontend engineer based in <span className="text-brand-text font-semibold">Abuja, Nigeria</span>, specializing in building high-performance web applications and decentralized Web3 user experiences.
                   </p>
                   <p>
-                    With deep roots in both <span className="text-brand-text font-medium">high-performance React frameworks</span> and the emerging <span className="text-brand-text font-medium">Web3 & Sui Move blockchain ecosystem</span>, I aim to craft application interfaces that are as robust underneath as they are visually striking on the surface.
-                  </p>
-                  <p>
-                    I thrive in cross-functional environments, comfortably coordinating with designers, contract engineers, and business leaders to convert raw technical specs into award-winning production platforms.
+                    With deep roots in both <span className="text-brand-text font-medium">React frameworks</span> and the <span className="text-brand-text font-medium">Sui Move blockchain ecosystem</span>, I bridge the gap between complex on-chain backend architectures and beautiful, responsive frontend interfaces.
                   </p>
                 </div>
               </div>
