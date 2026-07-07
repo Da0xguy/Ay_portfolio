@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X, Sun, Moon } from 'lucide-react';
 import avatarImg from '../assets/images/user_avatar_1783463091970.jpg';
@@ -36,6 +36,26 @@ export default function Navbar({
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    e.preventDefault();
+    setActiveSection(id);
+    setIsMobileMenuOpen(false);
+    
+    const element = document.getElementById(id);
+    if (element) {
+      const offset = 85; // Perfect offset for floating header height
+      const bodyRect = document.body.getBoundingClientRect().top;
+      const elementRect = element.getBoundingClientRect().top;
+      const elementPosition = elementRect - bodyRect;
+      const offsetPosition = elementPosition - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   const containerVariants = {
     hidden: { opacity: 0 },
     show: {
@@ -59,7 +79,7 @@ export default function Navbar({
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, type: 'spring', stiffness: 120, damping: 18 }}
       className={`fixed left-0 right-0 mx-auto z-40 transition-all duration-500 ease-out ${
-        isScrolled
+        isScrolled || isMobileMenuOpen
           ? 'top-4 w-[92%] sm:w-[85%] max-w-4xl rounded-2xl bg-brand-bg/85 dark:bg-black/80 border border-brand-border shadow-[0_20px_50px_rgba(0,0,0,0.1)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.8)] backdrop-blur-xl py-3 px-5 sm:px-8'
           : 'top-0 w-full rounded-none bg-transparent border-b border-transparent py-6 px-6 sm:px-12'
       }`}
@@ -69,10 +89,7 @@ export default function Navbar({
         <a
           id="nav-logo"
           href="#home"
-          onClick={() => {
-            setActiveSection('home');
-            setIsMobileMenuOpen(false);
-          }}
+          onClick={(e) => handleNavClick(e, 'home')}
           className="flex items-center gap-2 group cursor-pointer"
         >
           <div className="relative flex items-center justify-center w-9 h-9 rounded-xl overflow-hidden border border-brand-border group-hover:border-brand-accent/40 transition-all">
@@ -97,7 +114,7 @@ export default function Navbar({
                 key={item.id}
                 id={`nav-item-${item.id}`}
                 href={`#${item.id}`}
-                onClick={() => setActiveSection(item.id)}
+                onClick={(e) => handleNavClick(e, item.id)}
                 className={`px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide transition-all relative cursor-pointer ${
                   activeSection === item.id ? 'text-brand-text' : 'text-brand-muted hover:text-brand-text'
                 }`}
@@ -173,11 +190,8 @@ export default function Navbar({
                   id={`mobile-nav-item-${item.id}`}
                   href={`#${item.id}`}
                   variants={itemVariants}
-                  onClick={() => {
-                    setActiveSection(item.id);
-                    setIsMobileMenuOpen(false);
-                  }}
-                    className={`text-sm font-medium py-1.5 tracking-wide block transition-colors ${
+                  onClick={(e) => handleNavClick(e, item.id)}
+                  className={`text-sm font-medium py-1.5 tracking-wide block transition-colors ${
                     activeSection === item.id
                       ? 'text-brand-text font-bold pl-2 border-l-2 border-yellow-500'
                       : 'text-brand-muted hover:text-brand-text pl-0 hover:pl-2'
