@@ -3,7 +3,7 @@ import { Mail, Phone, Github, MapPin, Copy, Check, ArrowUpRight, Sparkles, Linke
 import { useState, useEffect } from 'react';
 import { PERSONAL_INFO } from '../data';
 import { generateResumePDF } from '../utils/resumeGenerator';
-import avatarImg from '../assets/images/user_avatar_1783463091970.jpg';
+import avatarImg from '../assets/profile-1.png';
 
 export default function Hero() {
   const [copied, setCopied] = useState(false);

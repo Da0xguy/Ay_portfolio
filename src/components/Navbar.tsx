@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X, Sun, Moon } from 'lucide-react';
-import avatarImg from '../assets/images/user_avatar_1783463091970.jpg';
+import avatarImg from '../assets/profile-1.png';
 
 interface NavbarProps {
   activeSection: string;
