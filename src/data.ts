@@ -1,5 +1,14 @@
 import { Project, Skill, Experience } from './types';
 
+import backstageImg from './assets/images/backstage_thumbnail_1783889064152.jpg';
+import medlockImg from './assets/images/medlock_thumbnail_1783889073670.jpg';
+import suiWalSwapImg from './assets/images/sui_wal_swap_thumbnail_1783889081998.jpg';
+import nextEpochLabsImg from './assets/images/next_epoch_labs_thumbnail_1783889091058.jpg';
+import lofiAcademyImg from './assets/images/lofi_academy_thumbnail_1783889104702.jpg';
+import timelineApparelImg from './assets/images/timeline_apparel_thumbnail_1783889113496.jpg';
+import talentFlowImg from './assets/images/talent_flow_thumbnail_1783889122601.jpg';
+import snowflakeImg from './assets/images/snowflake_thumbnail_1783889131002.jpg';
+
 export const PERSONAL_INFO = {
   name: 'Oketona Samuel Ayobami',
   nickname: 'Ay',
@@ -21,9 +30,9 @@ export const PERSONAL_INFO = {
 export const PROJECTS: Project[] = [
   {
     id: 'backstage-app',
-    title: 'Backstage App',
-    description: 'A Web3 decentralized video sharing application on Sui for creators to upload and earn.',
-    longDescription: 'A blockchain-integrated content platform where video creators can upload exclusive behind-the-scenes (BTS) content directly. Connected via Suiet for secure authorization, creators are compensated or tipped directly in SUI tokens. Features beautiful fluid layouts, custom video players, and full Web3 transactional feedback.',
+    title: 'Backstage',
+    description: 'The world\'s first Web3 marketplace for exclusive behind-the-scenes content.',
+    longDescription: 'A decentralized content platform where creators upload exclusive behind-the-scenes (BTS) media on-chain. Powered by the Sui Blockchain for peer-to-peer subscriptions and tips, featuring deep-custom video streaming controls and intuitive Web3 transaction states.',
     category: 'web3',
     tags: ['Sui Blockchain', 'Web3 UI/UX', 'React', 'Suiet Wallet Kit', 'Video Streaming', 'Smart Contracts'],
     features: [
@@ -33,13 +42,14 @@ export const PROJECTS: Project[] = [
       'Polished glassmorphic video dashboard with custom controls'
     ],
     githubUrl: 'https://github.com/N3xt-Ep0ch-L4bs/Backstage-app',
-    imageAccent: 'from-blue-500/20 to-indigo-500/10'
+    imageAccent: 'from-yellow-500/20 to-amber-500/10',
+    image: backstageImg
   },
   {
     id: 'medlock',
     title: 'MedLock',
-    description: 'A decentralized medical registry on Sui for appointment bookings and prescription handling.',
-    longDescription: 'A highly secure, patient-centric medical ecosystem. Users can book medical appointments, upload diagnostic test results securely, and doctors can issue cryptographic prescriptions. These prescriptions can be sent directly to pharmacies, where patients pay and authorize pickup in a decentralized, trustless manner.',
+    description: 'A secure, blockchain-powered healthcare platform for clinical prescriptions and care.',
+    longDescription: 'A secure decentralized patient prescription mapping and medical scheduler. Developed on Sui to allow patient-centric control of encrypted records and seamless wallet authorization with clinical entities.',
     category: 'web3',
     tags: ['Sui Blockchain', 'Healthcare Web3', 'React', 'TypeScript', 'Secure File Upload', 'Wallet Kit'],
     features: [
@@ -49,29 +59,48 @@ export const PROJECTS: Project[] = [
       'Smooth, responsive medical-grade glass dashboards'
     ],
     githubUrl: 'https://github.com/N3xt-Ep0ch-L4bs/MedLock-',
-    imageAccent: 'from-cyan-500/20 to-blue-500/10'
+    imageAccent: 'from-blue-500/20 to-cyan-500/10',
+    image: medlockImg
   },
   {
-    id: 'penny-otter',
-    title: 'Penny Otter',
-    description: 'An on-chain decentralized gaming and asset ecosystem built with custom Sui Move smart contracts.',
-    longDescription: 'Penny Otter showcases the power of Sui Move smart contracts in a gaming ecosystem. Users can swap assets, trade in-game currencies, and explore custom on-chain dynamics. Built with a responsive, high-performance UI, full wallet verification, and direct interaction with smart contracts.',
+    id: 'sui-wal-swap',
+    title: 'Sui <-> Walrus Swap',
+    description: 'A high-performance decentralized swap interface for assets between Sui and Walrus.',
+    longDescription: 'A clean, minimalist decentralized cryptocurrency swap engine that allows users to instantly exchange assets between Sui and Walrus. Features transaction previews, automatic wallet state synchronization, and custom Sui Move contracts.',
     category: 'web3',
-    tags: ['Sui Move', 'Sui Blockchain', 'On-Chain Assets', 'React', 'Web3 UI/UX', 'Wallet Integration'],
+    tags: ['Sui Blockchain', 'Walrus Protocol', 'Asset Swap', 'React', 'TypeScript', 'Wallet Kit'],
     features: [
-      'Interactive asset swapping and on-chain balance trackers',
-      'Custom Sui Move contracts for in-game currency management',
-      'Dynamic wallet state visualizations and live transaction logs',
-      'Buttery-smooth visual interfaces with low-latency updates'
+      'Direct peer-to-peer swapping between Sui and Walrus network tokens',
+      'Automatic slippage calculations and live price grounding',
+      'Integrated transaction receipt notifications',
+      'Clean, high-performance UI components with real-time balance tracking'
     ],
     githubUrl: 'https://github.com/Da0xguy/Penny-Otter',
-    imageAccent: 'from-emerald-500/20 to-teal-500/10'
+    imageAccent: 'from-sky-500/20 to-indigo-500/10',
+    image: suiWalSwapImg
+  },
+  {
+    id: 'next-epoch-labs',
+    title: 'NextEpoch Labs',
+    description: 'An innovation studio and landing portal pioneering the future of decentralized Web3.',
+    longDescription: 'NextEpoch Labs is a premium, minimal product studio portal built to showcase decentralized protocols, DeFi & NFT platforms, and on-chain metaverse identities. Calibrated with high-end typography and clean organic line art.',
+    category: 'frontend',
+    tags: ['Web3 Design', 'React', 'Framer Motion', 'Tailwind CSS', 'Studio Portal', 'Brand Experience'],
+    features: [
+      'Elegant fluid animations and abstract geometric backgrounds',
+      'Curated section blocks highlighting Web3 protocols and Metaverse systems',
+      'Highly optimized layouts for ultra-wide displays',
+      'Interactive project directory and contact triggers'
+    ],
+    githubUrl: 'https://github.com/N3xt-Ep0ch-L4bs/next-epoch-labs',
+    imageAccent: 'from-amber-400/20 to-yellow-600/10',
+    image: nextEpochLabsImg
   },
   {
     id: 'talentflow-lms',
-    title: 'Talentflow LMS',
-    description: 'A full-stack learning management platform for technical skill acquisition and instructor monetization.',
-    longDescription: 'A comprehensive, high-scale digital learning ecosystem designed for tech instructors to host curriculum and users to study technical subjects and earn. Includes robust lecture uploads, interactive quizzes, progress tracking dashboards, and Node.js-based API integrations with clean, custom responsive layouts.',
+    title: 'Talent Flow LMS',
+    description: 'A full-stack learning management ecosystem and tech career growth platform.',
+    longDescription: 'Talent Flow is a complete digital learning platform designed for career growth. Features comprehensive lecture guides, progress dashboard trackers, interactive modular courses, and instructor portals for technical skill-building.',
     category: 'fullstack',
     tags: ['React Vite', 'Node.js', 'Express', 'Tailwind CSS', 'API Integration', 'Responsive Design'],
     features: [
@@ -82,13 +111,14 @@ export const PROJECTS: Project[] = [
     ],
     demoUrl: 'https://talentflow-lms.vercel.app',
     githubUrl: 'https://github.com/Team-Xray-Trueminds/Talentflow_lms',
-    imageAccent: 'from-amber-500/20 to-orange-500/10'
+    imageAccent: 'from-blue-600/20 to-indigo-600/10',
+    image: talentFlowImg
   },
   {
     id: 'snowflake',
     title: 'Snowflake',
-    description: 'An elegant developer productivity suite and custom toolkit for rapid styling and build checks.',
-    longDescription: 'Snowflake is a lightweight, responsive developer helper designed to run automated file-checks, custom CSS variable styling, and local testing routines. Features quick code-formatting templates, real-time feedback loops, and highly customizable UI layout preferences.',
+    description: 'An on-chain Web3 identity and collectible Yeti NFT evolution platform.',
+    longDescription: 'Snowflake is a Web3 identity application where user NFTs evolve directly based on their verified on-chain actions. Leverages decorative trading card layouts, interactive collectible viewers, and Sui blockchain integrations.',
     category: 'fullstack',
     tags: ['Node.js', 'React', 'TypeScript', 'Developer Tools', 'Tailwind CSS', 'Express API'],
     features: [
@@ -98,45 +128,31 @@ export const PROJECTS: Project[] = [
       'Custom color configurations saved instantly to client state'
     ],
     githubUrl: 'https://github.com/Da0xguy/Snowflake',
-    imageAccent: 'from-purple-500/20 to-pink-500/10'
+    imageAccent: 'from-cyan-600/20 to-indigo-600/10',
+    image: snowflakeImg
   },
   {
-    id: 'chuks-kitchen',
-    title: "Chuk's Kitchen",
-    description: 'A sleek, visual online food ordering application with fluid interactions.',
-    longDescription: 'A premium, high-fidelity customer food ordering interface. Features a responsive menu selector, animated cart additions, price calculations, and structured custom specifications. Focused on delivering mouthwatering, high-density food photography and buttery-smooth layouts.',
+    id: 'timeline-apparel',
+    title: 'Timeline Apparel',
+    description: 'A luxury minimalist black-and-white Christian fashion e-commerce storefront.',
+    longDescription: 'A premium Christian apparel e-commerce interface using high-contrast typography, structural cards, and high-quality photography. Designed to host interactive galleries, responsive product selectors, and shopping carts.',
     category: 'frontend',
-    tags: ['React', 'Vite', 'Tailwind CSS', 'State management', 'Smooth Animations', 'Interactive UI'],
+    tags: ['E-Commerce', 'React', 'Minimalist Design', 'Tailwind CSS', 'Interactive Cart', 'High-Contrast UI'],
     features: [
-      'Interactive menu grid with detailed category filter sliders',
-      'Fluid, spring-animated sidebar shopping basket',
-      'Optimized image loaders with sleek skeleton states',
-      'Smooth step-by-step interactive checkout flow'
+      'Sleek black-and-white fashion gallery and product overview cards',
+      'Responsive sliding shopping drawer with real-time price counters',
+      'Technical spec blocks (100% Cotton, High Quality, Fast Delivery)',
+      'Optimized image layouts with smooth hover effects'
     ],
-    githubUrl: 'https://github.com/Da0xguy/Chuk-s-Kitchen',
-    imageAccent: 'from-yellow-500/20 to-orange-500/10'
-  },
-  {
-    id: 'ticketly',
-    title: 'Ticketly Frontend',
-    description: 'A modern decentralized ticketing client with robust ticket verification & interactive seats.',
-    longDescription: 'Ticketly is a responsive event ticket reservation client featuring seat selections, automated ticket verification reference generators, and customized interactive layouts. Integrates beautifully with wallet connectors to provide absolute proof of seat reservations.',
-    category: 'frontend',
-    tags: ['React', 'TypeScript', 'Tailwind CSS', 'Web3 Interfaces', 'Event Ticketing', 'Interactive Seats'],
-    features: [
-      'Responsive, interactive floor plan and seat ticket map',
-      'Unique ticket barcode or hash generator linked to client wallet',
-      'Dynamic ticket categorization and price calculations',
-      'Polished glass-panel structures with smooth responsive views'
-    ],
-    githubUrl: 'https://github.com/N3xt-Ep0ch-L4bs/Ticketly-frontend',
-    imageAccent: 'from-red-500/20 to-rose-500/10'
+    githubUrl: 'https://github.com/Da0xguy/Timeline-Apparel',
+    imageAccent: 'from-neutral-700/20 to-neutral-900/10',
+    image: timelineApparelImg
   },
   {
     id: 'lofi-academy',
     title: 'Lofi Academy',
-    description: 'An interactive aesthetic space combining productivity tools, ambient loops, and focus sounds.',
-    longDescription: 'Lofi Academy is a personalized browser workspace designed for focus. It integrates a sleek dynamic ambient synthesizer, customizable task timers, custom backgrounds, and simple local notes. Beautiful, minimalist, and perfectly calibrated to enhance study sessions.',
+    description: 'An interactive aesthetic study room combining productivity modules and ambient sounds.',
+    longDescription: 'An immersive and cozy virtual lofi workspace tailored to make learning Sui Move fun. Combines ambient audio synthesizer mixers, interactive study timers, and customizable canvas spaces with local storage trackers.',
     category: 'frontend',
     tags: ['React', 'Audio Synth', 'Productivity Widgets', 'Sleek Animations', 'Tailwind CSS', 'Interactive Space'],
     features: [
@@ -146,7 +162,8 @@ export const PROJECTS: Project[] = [
       'Dynamic audio loop synchronization using standard Web Audio APIs'
     ],
     githubUrl: 'https://github.com/Da0xguy/Lofi-academy',
-    imageAccent: 'from-teal-500/20 to-emerald-500/10'
+    imageAccent: 'from-amber-600/20 to-amber-900/10',
+    image: lofiAcademyImg
   }
 ];
 

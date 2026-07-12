@@ -9,6 +9,7 @@ export interface Project {
   demoUrl?: string;
   githubUrl?: string;
   imageAccent: string; // Tailwind color classes for glow
+  image?: string;
 }
 
 export interface Skill {

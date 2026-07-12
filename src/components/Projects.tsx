@@ -103,6 +103,19 @@ export default function Projects() {
                 {/* Visual Accent Glow on card top */}
                 <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-yellow-500 via-amber-500 to-yellow-600 opacity-20 group-hover:opacity-100 transition-opacity" />
 
+                {/* Project Screenshot Image */}
+                {project.image && (
+                  <div className="w-full aspect-video rounded-xl overflow-hidden mb-4 border border-brand-border/30 group-hover:border-yellow-500/20 transition-all duration-300 relative bg-black/20">
+                    <img 
+                      src={project.image} 
+                      alt={`${project.title} preview`}
+                      className="w-full h-full object-cover object-top group-hover:scale-[1.04] transition-transform duration-500 ease-out"
+                      referrerPolicy="no-referrer"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  </div>
+                )}
+
                 <div>
                   {/* Category & Badge */}
                   <div className="flex justify-between items-center mb-4">
@@ -205,7 +218,7 @@ export default function Projects() {
                   <div className="space-y-2.5">
                     <div className="flex items-center gap-2">
                       <span className="px-2.5 py-1 rounded-lg text-[10px] font-mono uppercase tracking-wider border font-semibold bg-brand-bg/60 dark:bg-white/5 border-brand-border text-brand-text">
-                        {selectedProject.category}
+                        {selectedProject.category === 'web3' ? 'Sui Move' : selectedProject.category === 'fullstack' ? 'Full Stack' : 'Frontend'}
                       </span>
                       {selectedProject.category === 'web3' && (
                         <span className="text-[10px] text-brand-muted font-mono flex items-center gap-1">
@@ -217,6 +230,18 @@ export default function Projects() {
                       {selectedProject.title}
                     </h3>
                   </div>
+
+                  {/* Project Full Screenshot */}
+                  {selectedProject.image && (
+                    <div className="w-full aspect-video rounded-xl overflow-hidden border border-brand-border bg-black/40">
+                      <img 
+                        src={selectedProject.image} 
+                        alt={`${selectedProject.title} full view`}
+                        className="w-full h-full object-cover object-top"
+                        referrerPolicy="no-referrer"
+                      />
+                    </div>
+                  )}
 
                   {/* Long Description */}
                   <div className="space-y-3">
